@@ -13,7 +13,7 @@ export default function Index() {
             });
     }, []);
 
-    const items = data.map(itemData => <Item itemData={itemData} />);
+    const items = data.map(itemData => <Item key={itemData.id} itemData={itemData} />);
     return (
         <div>
             <div>

@@ -8,16 +8,16 @@ export default function Item({ itemData }) {
             console.log(properties);
             setProperties(prevProperties => [
                 ...prevProperties,
-                <div key={key} className='rows'>
-                    <Property propertyName={key} />
+                <div key={key} className='rows '>
+                    <Property propertyName={key} changeRate={itemData['change-rate']} />
                 </div>,
             ]);
         }
     }, [itemData]);
     return (
         //for in
-        <div className='rows'>
-            <div className='columns'>{properties}</div>
+        <div className='rows '>
+            <div className='columns item'>{properties}</div>
         </div>
     );
 }
