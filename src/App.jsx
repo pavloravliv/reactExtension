@@ -1,7 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
+import TreeView from './components/tree/TreeView';
 // import MainRouter from './components/MainRouter';
-import MainRouter from './components/Routing/MainRouter';
+// import MainRouter from './components/Routing/MainRouter';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -12,7 +13,8 @@ function App() {
       <button type="button" onClick={toggleDarkMode}>
         Toggle Dark Mode
       </button>
-      <MainRouter />
+      <TreeView />
+      {/* <MainRouter /> */}
     </div>
   );
 }
