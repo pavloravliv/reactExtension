@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
-import Index from './components/Index';
+// import MainRouter from './components/MainRouter';
+import MainRouter from './components/MainRouter';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -8,10 +9,10 @@ function App() {
 
   return (
     <div className="App" data-theme={darkMode ? 'dark' : 'light'}>
+      <MainRouter />
       <button type="button" onClick={toggleDarkMode}>
         Toggle Dark Mode
       </button>
-      <Index />
     </div>
   );
 }
