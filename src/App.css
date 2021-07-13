@@ -37,7 +37,7 @@
   --text-color: #000;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg-color: #3f3f3f;
   --text-color: #fff;
 }

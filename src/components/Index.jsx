@@ -1,5 +1,5 @@
 import React from 'react';
-import useGetData from '../hooks/useGetData';
+import useGetData from './hooks/useGetData';
 import './index.css';
 // import Item from './item-representation/Item';
 import PrettyPrintJson from './item-representation/PrettyPrintJson';
