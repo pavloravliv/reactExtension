@@ -48,3 +48,8 @@
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 25px;
+}

@@ -3,7 +3,7 @@
     { "id": "item","x": {"position": 10, "change-rate":2}, "y": "typicode","change-rate":1 },
     { "id":"model" , "title": "json-server", "author": "typicode","change-rate":2 },
     { "id": "repr", "title": "json-server", "change-rate":2 },
-    {"id":"MainScreen","color":"white", "children":[{ "id":"gameContainer","gameContainer":{"alpha":1}}]}
+    {"id":"MainScreen","color":"white", "children":[{ "id":"gameContainer","gameContainer":{"alpha":1}, "children":[{"id":"lel"}]}]}
   ],
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 }
