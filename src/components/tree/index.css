@@ -35,3 +35,14 @@ ul,
 .active {
   display: block;
 }
+li:focus {
+  color: blueviolet;
+  outline: none;
+}
+a:focus {
+  color: black;
+}
+
+a:active {
+  color: black;
+}

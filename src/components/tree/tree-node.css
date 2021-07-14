@@ -2,6 +2,9 @@
   background: none;
   margin: 3px;
 }
+.TreeNode:focus {
+  background-color: aqua;
+}
 .caret {
   cursor: pointer;
   -webkit-user-select: none; /* Safari 3.1+ */
