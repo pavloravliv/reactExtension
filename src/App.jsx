@@ -9,7 +9,7 @@ function App() {
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <div data-theme={darkMode ? 'dark' : 'light'}>
+    <div className="App" data-theme={darkMode ? 'dark' : 'light'}>
       <button type="button" onClick={toggleDarkMode}>
         Toggle Dark Mode
       </button>

@@ -55,18 +55,16 @@ ul {
 }
 a {
   width: 100%;
+  color: black;
   height: 100%;
 }
 
 a:focus {
   color: black;
-  background-color: #3f3f3f;
+  opacity: 0.7;
+  background-color: blueviolet;
 }
 
 a:active {
   color: black;
-}
-
-li:focus {
-  background-color: #3f3f3f;
 }

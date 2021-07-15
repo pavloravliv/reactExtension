@@ -7,14 +7,16 @@ import './tree-node.css';
 import { Link } from 'react-router-dom';
 
 const TreeNode = ({ children, idItem }) => {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
   const clickRef = useRef(null);
   const hasChildren = !!children;
+
   const handleClick = () => {
-    console.log(clickRef.current);
+    // console.log(clickRef.current);
     clickRef.current.focus();
     setIsActive(!isActive);
   };
+
   const renderChildren = (childrenProp) => (
     <ul>
       {childrenProp.map((nodeProps) => {
@@ -26,15 +28,15 @@ const TreeNode = ({ children, idItem }) => {
 
   return (
     <li>
-      <Link to={`/${idItem}`} style={{ textDecoration: 'none', width: '100%', height: '100%' }}>
-        <div
-          ref={clickRef}
-          className={`TreeNode ${hasChildren ? 'caret' : ''} ${isActive ? 'caret-down' : ''}`}
-          onClick={handleClick}
-        >
+      <div
+        ref={clickRef}
+        className={`TreeNode ${hasChildren ? 'caret' : ''} ${isActive ? 'caret-down' : ''}`}
+        onClick={handleClick}
+      >
+        <Link to={`/${idItem}`} style={{ textDecoration: 'none', width: '100px', height: '100%' }}>
           {idItem}
-        </div>
-      </Link>
+        </Link>
+      </div>
       {isActive && hasChildren && renderChildren(children)}
     </li>
   );

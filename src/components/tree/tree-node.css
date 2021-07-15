@@ -2,9 +2,24 @@
   background: none;
   margin: 3px;
 }
-.TreeNode:focus {
+:target {
   background-color: aqua;
+  color: blue;
 }
+.selected {
+  background-color: aqua;
+  color: blue;
+}
+
+.TreeNode:focus {
+  background-color: dimgrey;
+  opacity: 0.2;
+}
+
+/* .TreeNode:active {
+  background-color: aqua;
+  color: blue;
+} */
 .caret {
   cursor: pointer;
   -webkit-user-select: none; /* Safari 3.1+ */
