@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
+import useGetData from '../hooks/useGetData';
 import Tree from '../tree/Tree';
 import './main-navigation.css';
 // import flattenArr from '../utils/flattenChildren';
@@ -17,22 +18,33 @@ function filterFlatArr(arr, matchString) {
   });
   return result;
 }
-export default function MainNavigation({ data }) {
+export default function MainNavigation() {
   const [inputState, setInputState] = useState('');
-
+  const [selectState, setSelectState] = useState();
   const filterByChildren = (item) => item.children.some((child) => includesCaseInsensitive(inputState, child.id));
 
+  const data = useGetData(selectState);
+  console.log(data);
   const filterFunction = (inputData) => inputData.filter((item) => (item.children !== undefined
     ? includesCaseInsensitive(inputState, item.id) || filterByChildren(item)
     : includesCaseInsensitive(inputState, item.id)));
 
-  const handleChange = (event) => {
+  const handleChangeInput = (event) => {
     setInputState(event.target.value);
+  };
+
+  const handleChangeSelect = (event) => {
+    setSelectState(event.target.value);
   };
 
   return (
     <div>
-      <input type="text" value={inputState} onChange={handleChange} />
+      <input type="text" value={inputState} onChange={handleChangeInput} />
+
+      <select name="categories" id="categories" value={selectState} onChange={handleChangeSelect}>
+        <option value="items">Item</option>
+        <option value="timers">Timer</option>
+      </select>
       <div>{inputState}</div>
       {inputState === '' ? (
         <Tree data={filterFunction(data)} />

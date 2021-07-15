@@ -23,7 +23,9 @@ import SplitView from '../split-view/split-view';
 // }
 export default function MainRouter() {
   const data = useGetData();
-  const realData = flattenArr(data);
+  const data2 = useGetData('timers');
+  const realData = [...flattenArr(data), ...flattenArr(data2)];
+  console.log(realData);
   return (
     <Router>
       <SplitView
