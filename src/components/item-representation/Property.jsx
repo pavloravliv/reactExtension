@@ -6,8 +6,10 @@ export default function Property({ propertyName, changeRate }) {
   const handleChange = (event) => {
     setInputState(event.target.value);
   };
-  const handleButtonPlus = () => setInputState((prevInputState) => +prevInputState + +changeRate ?? 1);
-  const handleButtonMinus = () => setInputState((prevInputState) => +prevInputState - +changeRate ?? 1);
+  const handleButtonPlus = () => setInputState(
+    (prevInputState) => +prevInputState + (changeRate === undefined ? 1 : +changeRate),
+  );
+  const handleButtonMinus = () => setInputState((prevInputState) => +prevInputState - 1);
   return (
     <div>
       <div>{propertyName}</div>
