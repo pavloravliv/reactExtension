@@ -9,7 +9,7 @@ import flattenArr from '../utils/flattenChildren';
 // import ControlledInput from '../ControlledInput';
 // import RecursiveComponentLink from './RecursiveComponentLink';
 import MainNavigation from './MainNavigation';
-
+import './main-navigation.css';
 // function flattenArr(arr) {
 //   const result = [];
 //   arr.forEach((item) => {
@@ -32,14 +32,10 @@ export default function MainRouter() {
   return (
     <Router>
       <div style={{ display: 'flex' }}>
-        <div
-          style={{
-            padding: '10px',
-            width: '20%',
-            background: '#f0f0f0',
-          }}
-        >
-          <MainNavigation data={data} />
+        <div>
+          <div className="stuck">
+            <MainNavigation data={data} />
+          </div>
           {/* <ControlledInput />
           <ul style={{ listStyleType: 'none', padding: 0 }}>
             {data.map((item) => (

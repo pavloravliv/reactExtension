@@ -2,18 +2,16 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-shadow */
 /* eslint-disable react/no-children-prop */
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import './tree-node.css';
 import { Link } from 'react-router-dom';
 
 const TreeNode = ({ children, idItem }) => {
   const [isActive, setIsActive] = useState(false);
-  const clickRef = useRef(null);
   const hasChildren = !!children;
 
   const handleClick = () => {
     // console.log(clickRef.current);
-    clickRef.current.focus();
     setIsActive(!isActive);
   };
 
@@ -29,7 +27,6 @@ const TreeNode = ({ children, idItem }) => {
   return (
     <li>
       <div
-        ref={clickRef}
         className={`TreeNode ${hasChildren ? 'caret' : ''} ${isActive ? 'caret-down' : ''}`}
         onClick={handleClick}
       >
