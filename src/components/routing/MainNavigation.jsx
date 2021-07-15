@@ -24,7 +24,6 @@ export default function MainNavigation() {
   const filterByChildren = (item) => item.children.some((child) => includesCaseInsensitive(inputState, child.id));
 
   const data = useGetData(selectState);
-  console.log(data);
   const filterFunction = (inputData) => inputData.filter((item) => (item.children !== undefined
     ? includesCaseInsensitive(inputState, item.id) || filterByChildren(item)
     : includesCaseInsensitive(inputState, item.id)));

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // import SplitView from './components/split-view/split-view';
 // import Tree from './components/tree/Tree';
 // import MainRouter from './components/Routing/MainRouter';
-import MainRouter from './components/Routing/MainRouter';
+import MainRouter from './components/routing/MainRouter';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);

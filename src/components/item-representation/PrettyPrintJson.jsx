@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PrettyPrintJson = React.memo(({ data }) => (
+const PrettyPrintJson = React.memo(({ itemData }) => (
   <div>
-    <pre>{JSON.stringify(data, null, 2)}</pre>
+    <pre>{JSON.stringify(itemData, null, 2)}</pre>
   </div>
 ));
 

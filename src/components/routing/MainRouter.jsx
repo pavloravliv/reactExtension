@@ -12,6 +12,7 @@ import flattenArr from '../utils/flattenChildren';
 import MainNavigation from './MainNavigation';
 import './main-navigation.css';
 import SplitView from '../split-view/split-view';
+import ItemCompound from '../item-representation/ItemCompound';
 // function flattenArr(arr) {
 //   const result = [];
 //   arr.forEach((item) => {
@@ -25,7 +26,6 @@ export default function MainRouter() {
   const data = useGetData();
   const data2 = useGetData('timers');
   const realData = [...flattenArr(data), ...flattenArr(data2)];
-  console.log(realData);
   return (
     <Router>
       <SplitView
@@ -39,7 +39,8 @@ export default function MainRouter() {
             <Switch>
               {realData.map((item) => (
                 <Route key={`/${item.id}`} path={`/${item.id}`} exact>
-                  <PrettyPrintJson data={item.data} />
+                  <ItemCompound itemData={item.data} />
+                  {/* <PrettyPrintJson data={item.data} /> */}
                 </Route>
               ))}
             </Switch>

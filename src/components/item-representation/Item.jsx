@@ -1,8 +1,11 @@
+/* eslint-disable no-continue */
+/* eslint-disable no-restricted-syntax */
 import React, { useState, useEffect } from 'react';
 import Property from './Property';
 
 export default function Item({ itemData }) {
   const [properties, setProperties] = useState([]);
+
   useEffect(() => {
     for (const key in itemData) {
       if (key === 'change_rate') continue;
