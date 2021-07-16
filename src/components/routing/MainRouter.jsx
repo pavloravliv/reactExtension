@@ -12,7 +12,7 @@ import flattenArr from '../utils/flattenChildren';
 import MainNavigation from './MainNavigation';
 import './main-navigation.css';
 import SplitView from '../split-view/split-view';
-import ItemCompound from '../item-representation/ItemCompound';
+import Item from '../item-representation/Item';
 // function flattenArr(arr) {
 //   const result = [];
 //   arr.forEach((item) => {
@@ -39,8 +39,8 @@ export default function MainRouter() {
             <Switch>
               {realData.map((item) => (
                 <Route key={`/${item.id}`} path={`/${item.id}`} exact>
-                  <ItemCompound itemData={item.data} />
-                  {/* <PrettyPrintJson data={item.data} /> */}
+                  <Item itemData={item.data} />
+                  {/* <ItemCompound itemData={item.data} /> */}
                 </Route>
               ))}
             </Switch>
